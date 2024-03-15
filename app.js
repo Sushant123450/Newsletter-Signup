@@ -11,11 +11,6 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-// client.setConfig({
-//     apiKey: "95024ceb5b92ba34ce6559651ef24a04-us22",
-//     server: "us22",
-// });
-
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/signup.html");
 });
@@ -42,11 +37,12 @@ app.post("/", (req, res) => {
     const url = "https://us22.api.mailchimp.com/3.0/lists/4e46dcc435"
     const options = {
         method: "POST",
-        auth: "Sushant123:95024ceb5b92ba34ce6559651ef24a04-us22"
+        auth: "Sushant123:da9e1e3897333364433da7153b27cfad-us22"
     }
 
     const request = https.request(url, options, function (response) {
-
+        console.log(response);
+        console.log(response.statusCode);
         const status = response.statusCode;
         if (status === 200) {
             res.sendFile(__dirname+"/success.html");
@@ -72,5 +68,5 @@ app.listen(process.env.PORT || 3000, () => {
     console.log("Server is running on 3000");
 });
 
-// API_ID = 95024ceb5b92ba34ce6559651ef24a04-us22
+// API_ID = da9e1e3897333364433da7153b27cfad-us22
 // Audience_Id = 4e46dcc435
