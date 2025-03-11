@@ -2,6 +2,7 @@ const express = require("express");
 const request = require("request");
 const bodyParser = require("body-parser");
 const https = require("https");
+require('dotenv').config()
 // const client = require("@mailchimp/mailchimp_marketing");
 
 const app = express();
